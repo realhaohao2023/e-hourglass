@@ -23,7 +23,12 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include "IIC.h"
+#include "inv_mpu.h"
+#include "inv_mpu_dmp_motion_driver.h"
+#include "mpu6050.h"
+#include <stdarg.h>
+#include "stdio.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -44,7 +49,10 @@
 /* Private variables ---------------------------------------------------------*/
 
 /* USER CODE BEGIN PV */
-
+//陀螺仪数据变量
+float pitch,roll,yaw;
+short gyrox,gyroy,gyroz;
+short	aacx,aacy,aacz;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -89,6 +97,8 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
+  MPU_Init();
+	//mpu_dmp_init();
 
   /* USER CODE END 2 */
 
@@ -96,6 +106,18 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
+    
+    MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);
+	  MPU_Get_Accelerometer(&aacx,&aacy,&aacz);
+    mpu_dmp_get_data(&pitch,&roll,&yaw);
+    
+    //printf("%hd,%hd,%hd\n",gyrox,gyroy,gyroz);
+    //printf("hello,world\n");
+    
+    printf("%f,%f,%f\n",pitch,roll,yaw);
+    HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+    HAL_Delay(500);
+    
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
