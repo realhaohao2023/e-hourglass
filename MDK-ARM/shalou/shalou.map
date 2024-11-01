@@ -273,9 +273,7 @@ Section Cross References
     inv_mpu.o(.text.run_self_test) refers to fflti.o(.text) for __aeabi_i2f
     inv_mpu.o(.text.run_self_test) refers to fmul.o(.text) for __aeabi_fmul
     inv_mpu.o(.text.run_self_test) refers to ffixi.o(.text) for __aeabi_f2iz
-    inv_mpu.o(.text.run_self_test) refers to inv_mpu_dmp_motion_driver.o(.text.dmp_set_gyro_bias) for dmp_set_gyro_bias
     inv_mpu.o(.text.run_self_test) refers to inv_mpu.o(.text.mpu_get_accel_sens) for mpu_get_accel_sens
-    inv_mpu.o(.text.run_self_test) refers to inv_mpu_dmp_motion_driver.o(.text.dmp_set_accel_bias) for dmp_set_accel_bias
     inv_mpu.o(.ARM.exidx.text.run_self_test) refers to inv_mpu.o(.text.run_self_test) for [Anonymous Symbol]
     inv_mpu.o(.text.inv_orientation_matrix_to_scalar) refers to inv_mpu.o(.text.inv_row_2_scale) for inv_row_2_scale
     inv_mpu.o(.ARM.exidx.text.inv_orientation_matrix_to_scalar) refers to inv_mpu.o(.text.inv_orientation_matrix_to_scalar) for [Anonymous Symbol]
@@ -1308,7 +1306,9 @@ Removing Unused input sections from the image.
     Removing inv_mpu_dmp_motion_driver.o(.text), (0 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.ARM.exidx.text.dmp_load_motion_driver_firmware), (8 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.ARM.exidx.text.dmp_set_orientation), (8 bytes).
+    Removing inv_mpu_dmp_motion_driver.o(.text.dmp_set_gyro_bias), (208 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.ARM.exidx.text.dmp_set_gyro_bias), (8 bytes).
+    Removing inv_mpu_dmp_motion_driver.o(.text.dmp_set_accel_bias), (192 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.ARM.exidx.text.dmp_set_accel_bias), (8 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.ARM.exidx.text.dmp_set_fifo_rate), (8 bytes).
     Removing inv_mpu_dmp_motion_driver.o(.text.dmp_get_fifo_rate), (16 bytes).
@@ -1742,7 +1742,7 @@ Removing Unused input sections from the image.
     Removing system_stm32f1xx.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
     Removing dflti.o(.text), (34 bytes).
 
-548 unused section(s) (total 16174 bytes) removed from the image.
+550 unused section(s) (total 16574 bytes) removed from the image.
 
 ==============================================================================
 
@@ -2016,130 +2016,126 @@ Image Symbol Table
     __arm_cp.0_0                             0x08001e4c   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_load_motion_driver_firmware)
     [Anonymous Symbol]                       0x08001e50   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_read_fifo)
     __arm_cp.24_0                            0x08002018   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_read_fifo)
-    [Anonymous Symbol]                       0x0800201c   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_accel_bias)
-    [Anonymous Symbol]                       0x080020d8   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
-    __arm_cp.4_1                             0x0800213c   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
-    [Anonymous Symbol]                       0x08002140   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_gyro_bias)
-    __arm_cp.2_1                             0x08002208   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_gyro_bias)
-    [Anonymous Symbol]                       0x0800220c   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
-    __arm_cp.1_0                             0x080022d8   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
-    __arm_cp.1_1                             0x080022dc   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
-    __arm_cp.1_2                             0x080022e0   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
-    [Anonymous Symbol]                       0x080022e4   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_thresh)
-    [Anonymous Symbol]                       0x08002316   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_time)
-    [Anonymous Symbol]                       0x0800233a   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_timeout)
-    [Anonymous Symbol]                       0x0800235e   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_axes)
-    [Anonymous Symbol]                       0x08002394   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_count)
-    [Anonymous Symbol]                       0x080023bc   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    __arm_cp.6_0                             0x080024c8   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    __arm_cp.6_1                             0x080024cc   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    __arm_cp.6_2                             0x080024d0   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    __arm_cp.6_3                             0x080024d4   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    __arm_cp.6_4                             0x080024d8   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    [Anonymous Symbol]                       0x080024dc   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time)
-    [Anonymous Symbol]                       0x08002500   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time_multi)
-    [Anonymous Symbol]                       0x08002524   Section        0  usart.o(.text.fputc)
-    __arm_cp.3_0                             0x0800253c   Number         4  usart.o(.text.fputc)
-    get_st_biases                            0x08002541   Thumb Code   808  inv_mpu.o(.text.get_st_biases)
-    [Anonymous Symbol]                       0x08002540   Section        0  inv_mpu.o(.text.get_st_biases)
-    __arm_cp.35_0                            0x08002864   Number         4  inv_mpu.o(.text.get_st_biases)
-    [Anonymous Symbol]                       0x08002868   Section        0  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
-    __arm_cp.45_0                            0x08002888   Number         4  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
-    [Anonymous Symbol]                       0x0800288c   Section        0  inv_mpu.o(.text.inv_row_2_scale)
-    [Anonymous Symbol]                       0x080028c8   Section        0  main.o(.text.main)
-    __arm_cp.0_0                             0x0800293c   Number         4  main.o(.text.main)
-    __arm_cp.0_1                             0x08002940   Number         4  main.o(.text.main)
-    [Anonymous Symbol]                       0x08002954   Section        0  inv_mpu.o(.text.mget_ms)
-    [Anonymous Symbol]                       0x08002958   Section        0  inv_mpu.o(.text.mpu_configure_fifo)
-    [Anonymous Symbol]                       0x080029a4   Section        0  inv_mpu.o(.text.mpu_dmp_get_data)
-    __arm_cp.48_0                            0x08002b70   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
-    [Anonymous Symbol]                       0x08002b74   Section        0  inv_mpu.o(.text.mpu_dmp_init)
-    __arm_cp.47_0                            0x08002c00   Number         4  inv_mpu.o(.text.mpu_dmp_init)
-    [Anonymous Symbol]                       0x08002c04   Section        0  inv_mpu.o(.text.mpu_get_accel_fsr)
-    __arm_cp.19_1                            0x08002c28   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
-    __arm_cp.19_2                            0x08002c2c   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
-    [Anonymous Symbol]                       0x08002c30   Section        0  inv_mpu.o(.text.mpu_get_accel_sens)
-    [Anonymous Symbol]                       0x08002c80   Section        0  inv_mpu.o(.text.mpu_get_gyro_fsr)
-    [Anonymous Symbol]                       0x08002cac   Section        0  inv_mpu.o(.text.mpu_get_gyro_sens)
-    __arm_cp.24_1                            0x08002cd4   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
-    __arm_cp.24_2                            0x08002cd8   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
-    __arm_cp.24_3                            0x08002cdc   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
-    __arm_cp.24_4                            0x08002ce0   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
-    [Anonymous Symbol]                       0x08002ce4   Section        0  inv_mpu.o(.text.mpu_get_lpf)
-    __arm_cp.20_0                            0x08002d18   Number         4  inv_mpu.o(.text.mpu_get_lpf)
-    [Anonymous Symbol]                       0x08002d1c   Section        0  inv_mpu.o(.text.mpu_init)
-    [Anonymous Symbol]                       0x08002e40   Section        0  inv_mpu.o(.text.mpu_load_firmware)
-    [Anonymous Symbol]                       0x08002eec   Section        0  inv_mpu.o(.text.mpu_lp_accel_mode)
-    __arm_cp.10_0                            0x08002fb0   Number         4  inv_mpu.o(.text.mpu_lp_accel_mode)
-    [Anonymous Symbol]                       0x08002fb4   Section        0  inv_mpu.o(.text.mpu_read_fifo_stream)
-    __arm_cp.31_0                            0x08003050   Number         4  inv_mpu.o(.text.mpu_read_fifo_stream)
-    [Anonymous Symbol]                       0x08003054   Section        0  inv_mpu.o(.text.mpu_read_mem)
-    __arm_cp.37_0                            0x080030b4   Number         4  inv_mpu.o(.text.mpu_read_mem)
-    [Anonymous Symbol]                       0x080030b8   Section        0  inv_mpu.o(.text.mpu_reset_fifo)
-    __arm_cp.17_0                            0x08003220   Number         4  inv_mpu.o(.text.mpu_reset_fifo)
-    [Anonymous Symbol]                       0x08003224   Section        0  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_1                            0x080034e4   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_2                            0x080034e8   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_3                            0x080034ec   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_4                            0x080034f0   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_5                            0x080034f4   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_6                            0x080034f8   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_7                            0x080034fc   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_8                            0x08003500   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_9                            0x08003504   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    __arm_cp.33_10                           0x08003508   Number         4  inv_mpu.o(.text.mpu_run_self_test)
-    [Anonymous Symbol]                       0x0800350c   Section        0  inv_mpu.o(.text.mpu_set_accel_fsr)
-    [Anonymous Symbol]                       0x08003580   Section        0  inv_mpu.o(.text.mpu_set_bypass)
-    [Anonymous Symbol]                       0x0800365c   Section        0  inv_mpu.o(.text.mpu_set_dmp_state)
-    [Anonymous Symbol]                       0x080036dc   Section        0  inv_mpu.o(.text.mpu_set_gyro_fsr)
-    [Anonymous Symbol]                       0x0800374c   Section        0  inv_mpu.o(.text.mpu_set_int_latched)
-    [Anonymous Symbol]                       0x080037a4   Section        0  inv_mpu.o(.text.mpu_set_lpf)
-    [Anonymous Symbol]                       0x08003804   Section        0  inv_mpu.o(.text.mpu_set_sample_rate)
-    __arm_cp.6_0                             0x08003880   Number         4  inv_mpu.o(.text.mpu_set_sample_rate)
-    [Anonymous Symbol]                       0x08003884   Section        0  inv_mpu.o(.text.mpu_set_sensors)
-    __arm_cp.9_0                             0x0800391c   Number         4  inv_mpu.o(.text.mpu_set_sensors)
-    [Anonymous Symbol]                       0x08003920   Section        0  inv_mpu.o(.text.mpu_write_mem)
-    __arm_cp.36_0                            0x08003980   Number         4  inv_mpu.o(.text.mpu_write_mem)
-    [Anonymous Symbol]                       0x08003984   Section        0  inv_mpu.o(.text.run_self_test)
-    set_int_enable                           0x08003a11   Thumb Code    76  inv_mpu.o(.text.set_int_enable)
-    [Anonymous Symbol]                       0x08003a10   Section        0  inv_mpu.o(.text.set_int_enable)
-    __arm_cp.27_0                            0x08003a58   Number         4  inv_mpu.o(.text.set_int_enable)
-    i.__0printf                              0x08003a5c   Section        0  printfa.o(i.__0printf)
-    i.__ARM_fpclassify                       0x08003a7c   Section        0  fpclassify.o(i.__ARM_fpclassify)
-    i.__kernel_poly                          0x08003aa4   Section        0  poly.o(i.__kernel_poly)
-    i.__mathlib_dbl_infnan                   0x08003b4e   Section        0  dunder.o(i.__mathlib_dbl_infnan)
-    i.__mathlib_dbl_infnan2                  0x08003b54   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
-    i.__mathlib_dbl_invalid                  0x08003b58   Section        0  dunder.o(i.__mathlib_dbl_invalid)
-    i.__mathlib_dbl_underflow                0x08003b64   Section        0  dunder.o(i.__mathlib_dbl_underflow)
-    i.__scatterload_copy                     0x08003b74   Section       14  handlers.o(i.__scatterload_copy)
-    i.__scatterload_null                     0x08003b82   Section        2  handlers.o(i.__scatterload_null)
-    i.__scatterload_zeroinit                 0x08003b84   Section       14  handlers.o(i.__scatterload_zeroinit)
-    i.__set_errno                            0x08003b94   Section        0  errno.o(i.__set_errno)
-    _fp_digits                               0x08003ba1   Thumb Code   366  printfa.o(i._fp_digits)
-    i._fp_digits                             0x08003ba0   Section        0  printfa.o(i._fp_digits)
-    _printf_core                             0x08003d25   Thumb Code  1744  printfa.o(i._printf_core)
-    i._printf_core                           0x08003d24   Section        0  printfa.o(i._printf_core)
-    _printf_post_padding                     0x08004401   Thumb Code    36  printfa.o(i._printf_post_padding)
-    i._printf_post_padding                   0x08004400   Section        0  printfa.o(i._printf_post_padding)
-    _printf_pre_padding                      0x08004425   Thumb Code    46  printfa.o(i._printf_pre_padding)
-    i._printf_pre_padding                    0x08004424   Section        0  printfa.o(i._printf_pre_padding)
-    i.asin                                   0x08004454   Section        0  asin.o(i.asin)
-    i.atan                                   0x080046c4   Section        0  atan.o(i.atan)
-    i.atan2                                  0x080048e4   Section        0  atan2.o(i.atan2)
-    i.sqrt                                   0x08004a80   Section        0  sqrt.o(i.sqrt)
-    pS                                       0x08004ad0   Data          48  asin.o(.constdata)
-    .constdata                               0x08004ad0   Section       80  asin.o(.constdata)
-    qS                                       0x08004b00   Data          32  asin.o(.constdata)
-    atanhi                                   0x08004b20   Data          32  atan.o(.constdata)
-    .constdata                               0x08004b20   Section      152  atan.o(.constdata)
-    atanlo                                   0x08004b40   Data          32  atan.o(.constdata)
-    aTodd                                    0x08004b60   Data          40  atan.o(.constdata)
-    aTeven                                   0x08004b88   Data          48  atan.o(.constdata)
-    .constdata                               0x08004bb8   Section        8  qnan.o(.constdata)
-    [Anonymous Symbol]                       0x08004bc0   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.accel_axes)
-    [Anonymous Symbol]                       0x08004bc3   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.gyro_axes)
-    dmp_memory                               0x08004bde   Data        3062  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
-    [Anonymous Symbol]                       0x08004bde   Section        0  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
+    [Anonymous Symbol]                       0x0800201c   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
+    __arm_cp.4_1                             0x08002080   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
+    [Anonymous Symbol]                       0x08002084   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
+    __arm_cp.1_0                             0x08002150   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
+    __arm_cp.1_1                             0x08002154   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
+    __arm_cp.1_2                             0x08002158   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
+    [Anonymous Symbol]                       0x0800215c   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_thresh)
+    [Anonymous Symbol]                       0x0800218e   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_time)
+    [Anonymous Symbol]                       0x080021b2   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_timeout)
+    [Anonymous Symbol]                       0x080021d6   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_axes)
+    [Anonymous Symbol]                       0x0800220c   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_count)
+    [Anonymous Symbol]                       0x08002234   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    __arm_cp.6_0                             0x08002340   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    __arm_cp.6_1                             0x08002344   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    __arm_cp.6_2                             0x08002348   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    __arm_cp.6_3                             0x0800234c   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    __arm_cp.6_4                             0x08002350   Number         4  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    [Anonymous Symbol]                       0x08002354   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time)
+    [Anonymous Symbol]                       0x08002378   Section        0  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time_multi)
+    [Anonymous Symbol]                       0x0800239c   Section        0  usart.o(.text.fputc)
+    __arm_cp.3_0                             0x080023b4   Number         4  usart.o(.text.fputc)
+    get_st_biases                            0x080023b9   Thumb Code   808  inv_mpu.o(.text.get_st_biases)
+    [Anonymous Symbol]                       0x080023b8   Section        0  inv_mpu.o(.text.get_st_biases)
+    __arm_cp.35_0                            0x080026dc   Number         4  inv_mpu.o(.text.get_st_biases)
+    [Anonymous Symbol]                       0x080026e0   Section        0  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
+    __arm_cp.45_0                            0x08002700   Number         4  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
+    [Anonymous Symbol]                       0x08002704   Section        0  inv_mpu.o(.text.inv_row_2_scale)
+    [Anonymous Symbol]                       0x08002740   Section        0  main.o(.text.main)
+    __arm_cp.0_0                             0x080027b4   Number         4  main.o(.text.main)
+    __arm_cp.0_1                             0x080027b8   Number         4  main.o(.text.main)
+    [Anonymous Symbol]                       0x080027cc   Section        0  inv_mpu.o(.text.mget_ms)
+    [Anonymous Symbol]                       0x080027d0   Section        0  inv_mpu.o(.text.mpu_configure_fifo)
+    [Anonymous Symbol]                       0x0800281c   Section        0  inv_mpu.o(.text.mpu_dmp_get_data)
+    __arm_cp.48_0                            0x080029e8   Number         4  inv_mpu.o(.text.mpu_dmp_get_data)
+    [Anonymous Symbol]                       0x080029ec   Section        0  inv_mpu.o(.text.mpu_dmp_init)
+    __arm_cp.47_0                            0x08002a78   Number         4  inv_mpu.o(.text.mpu_dmp_init)
+    [Anonymous Symbol]                       0x08002a7c   Section        0  inv_mpu.o(.text.mpu_get_accel_fsr)
+    __arm_cp.19_1                            0x08002aa0   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
+    __arm_cp.19_2                            0x08002aa4   Number         4  inv_mpu.o(.text.mpu_get_accel_fsr)
+    [Anonymous Symbol]                       0x08002aa8   Section        0  inv_mpu.o(.text.mpu_get_accel_sens)
+    [Anonymous Symbol]                       0x08002af8   Section        0  inv_mpu.o(.text.mpu_get_gyro_fsr)
+    [Anonymous Symbol]                       0x08002b24   Section        0  inv_mpu.o(.text.mpu_get_gyro_sens)
+    __arm_cp.24_1                            0x08002b4c   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
+    __arm_cp.24_2                            0x08002b50   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
+    __arm_cp.24_3                            0x08002b54   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
+    __arm_cp.24_4                            0x08002b58   Number         4  inv_mpu.o(.text.mpu_get_gyro_sens)
+    [Anonymous Symbol]                       0x08002b5c   Section        0  inv_mpu.o(.text.mpu_get_lpf)
+    __arm_cp.20_0                            0x08002b90   Number         4  inv_mpu.o(.text.mpu_get_lpf)
+    [Anonymous Symbol]                       0x08002b94   Section        0  inv_mpu.o(.text.mpu_init)
+    [Anonymous Symbol]                       0x08002cb8   Section        0  inv_mpu.o(.text.mpu_load_firmware)
+    [Anonymous Symbol]                       0x08002d64   Section        0  inv_mpu.o(.text.mpu_lp_accel_mode)
+    __arm_cp.10_0                            0x08002e28   Number         4  inv_mpu.o(.text.mpu_lp_accel_mode)
+    [Anonymous Symbol]                       0x08002e2c   Section        0  inv_mpu.o(.text.mpu_read_fifo_stream)
+    __arm_cp.31_0                            0x08002ec8   Number         4  inv_mpu.o(.text.mpu_read_fifo_stream)
+    [Anonymous Symbol]                       0x08002ecc   Section        0  inv_mpu.o(.text.mpu_read_mem)
+    __arm_cp.37_0                            0x08002f2c   Number         4  inv_mpu.o(.text.mpu_read_mem)
+    [Anonymous Symbol]                       0x08002f30   Section        0  inv_mpu.o(.text.mpu_reset_fifo)
+    __arm_cp.17_0                            0x08003098   Number         4  inv_mpu.o(.text.mpu_reset_fifo)
+    [Anonymous Symbol]                       0x0800309c   Section        0  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_1                            0x0800335c   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_2                            0x08003360   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_3                            0x08003364   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_4                            0x08003368   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_5                            0x0800336c   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_6                            0x08003370   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_7                            0x08003374   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_8                            0x08003378   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_9                            0x0800337c   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    __arm_cp.33_10                           0x08003380   Number         4  inv_mpu.o(.text.mpu_run_self_test)
+    [Anonymous Symbol]                       0x08003384   Section        0  inv_mpu.o(.text.mpu_set_accel_fsr)
+    [Anonymous Symbol]                       0x080033f8   Section        0  inv_mpu.o(.text.mpu_set_bypass)
+    [Anonymous Symbol]                       0x080034d4   Section        0  inv_mpu.o(.text.mpu_set_dmp_state)
+    [Anonymous Symbol]                       0x08003554   Section        0  inv_mpu.o(.text.mpu_set_gyro_fsr)
+    [Anonymous Symbol]                       0x080035c4   Section        0  inv_mpu.o(.text.mpu_set_int_latched)
+    [Anonymous Symbol]                       0x0800361c   Section        0  inv_mpu.o(.text.mpu_set_lpf)
+    [Anonymous Symbol]                       0x0800367c   Section        0  inv_mpu.o(.text.mpu_set_sample_rate)
+    __arm_cp.6_0                             0x080036f8   Number         4  inv_mpu.o(.text.mpu_set_sample_rate)
+    [Anonymous Symbol]                       0x080036fc   Section        0  inv_mpu.o(.text.mpu_set_sensors)
+    __arm_cp.9_0                             0x08003794   Number         4  inv_mpu.o(.text.mpu_set_sensors)
+    [Anonymous Symbol]                       0x08003798   Section        0  inv_mpu.o(.text.mpu_write_mem)
+    [Anonymous Symbol]                       0x080037f8   Section        0  inv_mpu.o(.text.run_self_test)
+    set_int_enable                           0x08003879   Thumb Code    76  inv_mpu.o(.text.set_int_enable)
+    [Anonymous Symbol]                       0x08003878   Section        0  inv_mpu.o(.text.set_int_enable)
+    __arm_cp.27_0                            0x080038c0   Number         4  inv_mpu.o(.text.set_int_enable)
+    i.__0printf                              0x080038c4   Section        0  printfa.o(i.__0printf)
+    i.__ARM_fpclassify                       0x080038e4   Section        0  fpclassify.o(i.__ARM_fpclassify)
+    i.__kernel_poly                          0x0800390c   Section        0  poly.o(i.__kernel_poly)
+    i.__mathlib_dbl_infnan                   0x080039b6   Section        0  dunder.o(i.__mathlib_dbl_infnan)
+    i.__mathlib_dbl_infnan2                  0x080039bc   Section        0  dunder.o(i.__mathlib_dbl_infnan2)
+    i.__mathlib_dbl_invalid                  0x080039c0   Section        0  dunder.o(i.__mathlib_dbl_invalid)
+    i.__mathlib_dbl_underflow                0x080039cc   Section        0  dunder.o(i.__mathlib_dbl_underflow)
+    i.__scatterload_copy                     0x080039dc   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x080039ea   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x080039ec   Section       14  handlers.o(i.__scatterload_zeroinit)
+    i.__set_errno                            0x080039fc   Section        0  errno.o(i.__set_errno)
+    _fp_digits                               0x08003a09   Thumb Code   366  printfa.o(i._fp_digits)
+    i._fp_digits                             0x08003a08   Section        0  printfa.o(i._fp_digits)
+    _printf_core                             0x08003b8d   Thumb Code  1744  printfa.o(i._printf_core)
+    i._printf_core                           0x08003b8c   Section        0  printfa.o(i._printf_core)
+    _printf_post_padding                     0x08004269   Thumb Code    36  printfa.o(i._printf_post_padding)
+    i._printf_post_padding                   0x08004268   Section        0  printfa.o(i._printf_post_padding)
+    _printf_pre_padding                      0x0800428d   Thumb Code    46  printfa.o(i._printf_pre_padding)
+    i._printf_pre_padding                    0x0800428c   Section        0  printfa.o(i._printf_pre_padding)
+    i.asin                                   0x080042bc   Section        0  asin.o(i.asin)
+    i.atan                                   0x0800452c   Section        0  atan.o(i.atan)
+    i.atan2                                  0x0800474c   Section        0  atan2.o(i.atan2)
+    i.sqrt                                   0x080048e8   Section        0  sqrt.o(i.sqrt)
+    pS                                       0x08004938   Data          48  asin.o(.constdata)
+    .constdata                               0x08004938   Section       80  asin.o(.constdata)
+    qS                                       0x08004968   Data          32  asin.o(.constdata)
+    atanhi                                   0x08004988   Data          32  atan.o(.constdata)
+    .constdata                               0x08004988   Section      152  atan.o(.constdata)
+    atanlo                                   0x080049a8   Data          32  atan.o(.constdata)
+    aTodd                                    0x080049c8   Data          40  atan.o(.constdata)
+    aTeven                                   0x080049f0   Data          48  atan.o(.constdata)
+    .constdata                               0x08004a20   Section        8  qnan.o(.constdata)
+    [Anonymous Symbol]                       0x08004a28   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.accel_axes)
+    [Anonymous Symbol]                       0x08004a2b   Section        0  inv_mpu_dmp_motion_driver.o(.rodata..L__const.dmp_set_orientation.gyro_axes)
+    dmp_memory                               0x08004a46   Data        3062  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
+    [Anonymous Symbol]                       0x08004a46   Section        0  inv_mpu_dmp_motion_driver.o(.rodata.dmp_memory)
     .data                                    0x20000000   Section        4  stdout.o(.data)
     _errno                                   0x20000004   Data           4  errno.o(.data)
     .data                                    0x20000004   Section        4  errno.o(.data)
@@ -2371,75 +2367,73 @@ Image Symbol Table
     dmp_enable_lp_quat                       0x08001e15   Thumb Code    40  inv_mpu_dmp_motion_driver.o(.text.dmp_enable_lp_quat)
     dmp_load_motion_driver_firmware          0x08001e3d   Thumb Code    20  inv_mpu_dmp_motion_driver.o(.text.dmp_load_motion_driver_firmware)
     dmp_read_fifo                            0x08001e51   Thumb Code   460  inv_mpu_dmp_motion_driver.o(.text.dmp_read_fifo)
-    dmp_set_accel_bias                       0x0800201d   Thumb Code   192  inv_mpu_dmp_motion_driver.o(.text.dmp_set_accel_bias)
-    dmp_set_fifo_rate                        0x080020d9   Thumb Code   104  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
-    dmp_set_gyro_bias                        0x08002141   Thumb Code   208  inv_mpu_dmp_motion_driver.o(.text.dmp_set_gyro_bias)
-    dmp_set_orientation                      0x0800220d   Thumb Code   216  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
-    dmp_set_shake_reject_thresh              0x080022e5   Thumb Code    50  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_thresh)
-    dmp_set_shake_reject_time                0x08002317   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_time)
-    dmp_set_shake_reject_timeout             0x0800233b   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_timeout)
-    dmp_set_tap_axes                         0x0800235f   Thumb Code    54  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_axes)
-    dmp_set_tap_count                        0x08002395   Thumb Code    38  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_count)
-    dmp_set_tap_thresh                       0x080023bd   Thumb Code   288  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
-    dmp_set_tap_time                         0x080024dd   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time)
-    dmp_set_tap_time_multi                   0x08002501   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time_multi)
-    fputc                                    0x08002525   Thumb Code    28  usart.o(.text.fputc)
-    inv_orientation_matrix_to_scalar         0x08002869   Thumb Code    36  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
-    inv_row_2_scale                          0x0800288d   Thumb Code    58  inv_mpu.o(.text.inv_row_2_scale)
-    main                                     0x080028c9   Thumb Code   140  main.o(.text.main)
-    mget_ms                                  0x08002955   Thumb Code     2  inv_mpu.o(.text.mget_ms)
-    mpu_configure_fifo                       0x08002959   Thumb Code    80  inv_mpu.o(.text.mpu_configure_fifo)
-    mpu_dmp_get_data                         0x080029a5   Thumb Code   464  inv_mpu.o(.text.mpu_dmp_get_data)
-    mpu_dmp_init                             0x08002b75   Thumb Code   144  inv_mpu.o(.text.mpu_dmp_init)
-    mpu_get_accel_fsr                        0x08002c05   Thumb Code    48  inv_mpu.o(.text.mpu_get_accel_fsr)
-    mpu_get_accel_sens                       0x08002c31   Thumb Code    84  inv_mpu.o(.text.mpu_get_accel_sens)
-    mpu_get_gyro_fsr                         0x08002c81   Thumb Code    48  inv_mpu.o(.text.mpu_get_gyro_fsr)
-    mpu_get_gyro_sens                        0x08002cad   Thumb Code    60  inv_mpu.o(.text.mpu_get_gyro_sens)
-    mpu_get_lpf                              0x08002ce5   Thumb Code    56  inv_mpu.o(.text.mpu_get_lpf)
-    mpu_init                                 0x08002d1d   Thumb Code   296  inv_mpu.o(.text.mpu_init)
-    mpu_load_firmware                        0x08002e41   Thumb Code   176  inv_mpu.o(.text.mpu_load_firmware)
-    mpu_lp_accel_mode                        0x08002eed   Thumb Code   200  inv_mpu.o(.text.mpu_lp_accel_mode)
-    mpu_read_fifo_stream                     0x08002fb5   Thumb Code   160  inv_mpu.o(.text.mpu_read_fifo_stream)
-    mpu_read_mem                             0x08003055   Thumb Code   100  inv_mpu.o(.text.mpu_read_mem)
-    mpu_reset_fifo                           0x080030b9   Thumb Code   364  inv_mpu.o(.text.mpu_reset_fifo)
-    mpu_run_self_test                        0x08003225   Thumb Code   748  inv_mpu.o(.text.mpu_run_self_test)
-    mpu_set_accel_fsr                        0x0800350d   Thumb Code   120  inv_mpu.o(.text.mpu_set_accel_fsr)
-    mpu_set_bypass                           0x08003581   Thumb Code   224  inv_mpu.o(.text.mpu_set_bypass)
-    mpu_set_dmp_state                        0x0800365d   Thumb Code   132  inv_mpu.o(.text.mpu_set_dmp_state)
-    mpu_set_gyro_fsr                         0x080036dd   Thumb Code   116  inv_mpu.o(.text.mpu_set_gyro_fsr)
-    mpu_set_int_latched                      0x0800374d   Thumb Code    92  inv_mpu.o(.text.mpu_set_int_latched)
-    mpu_set_lpf                              0x080037a5   Thumb Code   100  inv_mpu.o(.text.mpu_set_lpf)
-    mpu_set_sample_rate                      0x08003805   Thumb Code   128  inv_mpu.o(.text.mpu_set_sample_rate)
-    mpu_set_sensors                          0x08003885   Thumb Code   156  inv_mpu.o(.text.mpu_set_sensors)
-    mpu_write_mem                            0x08003921   Thumb Code   100  inv_mpu.o(.text.mpu_write_mem)
-    run_self_test                            0x08003985   Thumb Code   140  inv_mpu.o(.text.run_self_test)
-    __0printf                                0x08003a5d   Thumb Code    22  printfa.o(i.__0printf)
-    __1printf                                0x08003a5d   Thumb Code     0  printfa.o(i.__0printf)
-    __2printf                                0x08003a5d   Thumb Code     0  printfa.o(i.__0printf)
-    __c89printf                              0x08003a5d   Thumb Code     0  printfa.o(i.__0printf)
-    printf                                   0x08003a5d   Thumb Code     0  printfa.o(i.__0printf)
-    __ARM_fpclassify                         0x08003a7d   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
-    __kernel_poly                            0x08003aa5   Thumb Code   170  poly.o(i.__kernel_poly)
-    __mathlib_dbl_infnan                     0x08003b4f   Thumb Code     6  dunder.o(i.__mathlib_dbl_infnan)
-    __mathlib_dbl_infnan2                    0x08003b55   Thumb Code     4  dunder.o(i.__mathlib_dbl_infnan2)
-    __mathlib_dbl_invalid                    0x08003b59   Thumb Code    12  dunder.o(i.__mathlib_dbl_invalid)
-    __mathlib_dbl_underflow                  0x08003b65   Thumb Code    10  dunder.o(i.__mathlib_dbl_underflow)
-    __scatterload_copy                       0x08003b75   Thumb Code    14  handlers.o(i.__scatterload_copy)
-    __scatterload_null                       0x08003b83   Thumb Code     2  handlers.o(i.__scatterload_null)
-    __scatterload_zeroinit                   0x08003b85   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
-    __set_errno                              0x08003b95   Thumb Code     6  errno.o(i.__set_errno)
-    asin                                     0x08004455   Thumb Code   572  asin.o(i.asin)
-    atan                                     0x080046c5   Thumb Code   474  atan.o(i.atan)
-    atan2                                    0x080048e5   Thumb Code   374  atan2.o(i.atan2)
-    sqrt                                     0x08004a81   Thumb Code    76  sqrt.o(i.sqrt)
-    __mathlib_zero                           0x08004bb8   Data           8  qnan.o(.constdata)
-    AHBPrescTable                            0x08004bc6   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
-    APBPrescTable                            0x08004bd6   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
-    hw                                       0x080057d4   Data          12  inv_mpu.o(.rodata.hw)
-    reg                                      0x080057e0   Data          27  inv_mpu.o(.rodata.reg)
-    test                                     0x080057fc   Data          40  inv_mpu.o(.rodata.test)
-    Region$$Table$$Base                      0x08005824   Number         0  anon$$obj.o(Region$$Table)
-    Region$$Table$$Limit                     0x08005844   Number         0  anon$$obj.o(Region$$Table)
+    dmp_set_fifo_rate                        0x0800201d   Thumb Code   104  inv_mpu_dmp_motion_driver.o(.text.dmp_set_fifo_rate)
+    dmp_set_orientation                      0x08002085   Thumb Code   216  inv_mpu_dmp_motion_driver.o(.text.dmp_set_orientation)
+    dmp_set_shake_reject_thresh              0x0800215d   Thumb Code    50  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_thresh)
+    dmp_set_shake_reject_time                0x0800218f   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_time)
+    dmp_set_shake_reject_timeout             0x080021b3   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_shake_reject_timeout)
+    dmp_set_tap_axes                         0x080021d7   Thumb Code    54  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_axes)
+    dmp_set_tap_count                        0x0800220d   Thumb Code    38  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_count)
+    dmp_set_tap_thresh                       0x08002235   Thumb Code   288  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_thresh)
+    dmp_set_tap_time                         0x08002355   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time)
+    dmp_set_tap_time_multi                   0x08002379   Thumb Code    36  inv_mpu_dmp_motion_driver.o(.text.dmp_set_tap_time_multi)
+    fputc                                    0x0800239d   Thumb Code    28  usart.o(.text.fputc)
+    inv_orientation_matrix_to_scalar         0x080026e1   Thumb Code    36  inv_mpu.o(.text.inv_orientation_matrix_to_scalar)
+    inv_row_2_scale                          0x08002705   Thumb Code    58  inv_mpu.o(.text.inv_row_2_scale)
+    main                                     0x08002741   Thumb Code   140  main.o(.text.main)
+    mget_ms                                  0x080027cd   Thumb Code     2  inv_mpu.o(.text.mget_ms)
+    mpu_configure_fifo                       0x080027d1   Thumb Code    80  inv_mpu.o(.text.mpu_configure_fifo)
+    mpu_dmp_get_data                         0x0800281d   Thumb Code   464  inv_mpu.o(.text.mpu_dmp_get_data)
+    mpu_dmp_init                             0x080029ed   Thumb Code   144  inv_mpu.o(.text.mpu_dmp_init)
+    mpu_get_accel_fsr                        0x08002a7d   Thumb Code    48  inv_mpu.o(.text.mpu_get_accel_fsr)
+    mpu_get_accel_sens                       0x08002aa9   Thumb Code    84  inv_mpu.o(.text.mpu_get_accel_sens)
+    mpu_get_gyro_fsr                         0x08002af9   Thumb Code    48  inv_mpu.o(.text.mpu_get_gyro_fsr)
+    mpu_get_gyro_sens                        0x08002b25   Thumb Code    60  inv_mpu.o(.text.mpu_get_gyro_sens)
+    mpu_get_lpf                              0x08002b5d   Thumb Code    56  inv_mpu.o(.text.mpu_get_lpf)
+    mpu_init                                 0x08002b95   Thumb Code   296  inv_mpu.o(.text.mpu_init)
+    mpu_load_firmware                        0x08002cb9   Thumb Code   176  inv_mpu.o(.text.mpu_load_firmware)
+    mpu_lp_accel_mode                        0x08002d65   Thumb Code   200  inv_mpu.o(.text.mpu_lp_accel_mode)
+    mpu_read_fifo_stream                     0x08002e2d   Thumb Code   160  inv_mpu.o(.text.mpu_read_fifo_stream)
+    mpu_read_mem                             0x08002ecd   Thumb Code   100  inv_mpu.o(.text.mpu_read_mem)
+    mpu_reset_fifo                           0x08002f31   Thumb Code   364  inv_mpu.o(.text.mpu_reset_fifo)
+    mpu_run_self_test                        0x0800309d   Thumb Code   748  inv_mpu.o(.text.mpu_run_self_test)
+    mpu_set_accel_fsr                        0x08003385   Thumb Code   120  inv_mpu.o(.text.mpu_set_accel_fsr)
+    mpu_set_bypass                           0x080033f9   Thumb Code   224  inv_mpu.o(.text.mpu_set_bypass)
+    mpu_set_dmp_state                        0x080034d5   Thumb Code   132  inv_mpu.o(.text.mpu_set_dmp_state)
+    mpu_set_gyro_fsr                         0x08003555   Thumb Code   116  inv_mpu.o(.text.mpu_set_gyro_fsr)
+    mpu_set_int_latched                      0x080035c5   Thumb Code    92  inv_mpu.o(.text.mpu_set_int_latched)
+    mpu_set_lpf                              0x0800361d   Thumb Code   100  inv_mpu.o(.text.mpu_set_lpf)
+    mpu_set_sample_rate                      0x0800367d   Thumb Code   128  inv_mpu.o(.text.mpu_set_sample_rate)
+    mpu_set_sensors                          0x080036fd   Thumb Code   156  inv_mpu.o(.text.mpu_set_sensors)
+    mpu_write_mem                            0x08003799   Thumb Code   100  inv_mpu.o(.text.mpu_write_mem)
+    run_self_test                            0x080037f9   Thumb Code   128  inv_mpu.o(.text.run_self_test)
+    __0printf                                0x080038c5   Thumb Code    22  printfa.o(i.__0printf)
+    __1printf                                0x080038c5   Thumb Code     0  printfa.o(i.__0printf)
+    __2printf                                0x080038c5   Thumb Code     0  printfa.o(i.__0printf)
+    __c89printf                              0x080038c5   Thumb Code     0  printfa.o(i.__0printf)
+    printf                                   0x080038c5   Thumb Code     0  printfa.o(i.__0printf)
+    __ARM_fpclassify                         0x080038e5   Thumb Code    40  fpclassify.o(i.__ARM_fpclassify)
+    __kernel_poly                            0x0800390d   Thumb Code   170  poly.o(i.__kernel_poly)
+    __mathlib_dbl_infnan                     0x080039b7   Thumb Code     6  dunder.o(i.__mathlib_dbl_infnan)
+    __mathlib_dbl_infnan2                    0x080039bd   Thumb Code     4  dunder.o(i.__mathlib_dbl_infnan2)
+    __mathlib_dbl_invalid                    0x080039c1   Thumb Code    12  dunder.o(i.__mathlib_dbl_invalid)
+    __mathlib_dbl_underflow                  0x080039cd   Thumb Code    10  dunder.o(i.__mathlib_dbl_underflow)
+    __scatterload_copy                       0x080039dd   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x080039eb   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x080039ed   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    __set_errno                              0x080039fd   Thumb Code     6  errno.o(i.__set_errno)
+    asin                                     0x080042bd   Thumb Code   572  asin.o(i.asin)
+    atan                                     0x0800452d   Thumb Code   474  atan.o(i.atan)
+    atan2                                    0x0800474d   Thumb Code   374  atan2.o(i.atan2)
+    sqrt                                     0x080048e9   Thumb Code    76  sqrt.o(i.sqrt)
+    __mathlib_zero                           0x08004a20   Data           8  qnan.o(.constdata)
+    AHBPrescTable                            0x08004a2e   Data          16  system_stm32f1xx.o(.rodata.AHBPrescTable)
+    APBPrescTable                            0x08004a3e   Data           8  system_stm32f1xx.o(.rodata.APBPrescTable)
+    hw                                       0x0800563c   Data          12  inv_mpu.o(.rodata.hw)
+    reg                                      0x08005648   Data          27  inv_mpu.o(.rodata.reg)
+    test                                     0x08005664   Data          40  inv_mpu.o(.rodata.test)
+    Region$$Table$$Base                      0x0800568c   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x080056ac   Number         0  anon$$obj.o(Region$$Table)
     __stdout                                 0x20000000   Data           4  stdout.o(.data)
     uwTickFreq                               0x20000008   Data           1  stm32f1xx_hal.o(.data..L_MergedGlobals)
     uwTickPrio                               0x2000000c   Data           4  stm32f1xx_hal.o(.data..L_MergedGlobals)
@@ -2459,9 +2453,9 @@ Memory Map of the image
 
   Image Entry point : 0x080000ed
 
-  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00005898, Max: 0x00008000, ABSOLUTE)
+  Load Region LR_IROM1 (Base: 0x08000000, Size: 0x00005700, Max: 0x00008000, ABSOLUTE)
 
-    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x00005844, Max: 0x00008000, ABSOLUTE)
+    Execution Region ER_IROM1 (Exec base: 0x08000000, Load base: 0x08000000, Size: 0x000056ac, Max: 0x00008000, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
@@ -2577,108 +2571,106 @@ Memory Map of the image
     0x08001e14   0x08001e14   0x00000028   Code   RO          278    .text.dmp_enable_lp_quat  inv_mpu_dmp_motion_driver.o
     0x08001e3c   0x08001e3c   0x00000014   Code   RO          238    .text.dmp_load_motion_driver_firmware  inv_mpu_dmp_motion_driver.o
     0x08001e50   0x08001e50   0x000001cc   Code   RO          286    .text.dmp_read_fifo  inv_mpu_dmp_motion_driver.o
-    0x0800201c   0x0800201c   0x000000bc   Code   RO          244    .text.dmp_set_accel_bias  inv_mpu_dmp_motion_driver.o
-    0x080020d8   0x080020d8   0x00000068   Code   RO          246    .text.dmp_set_fifo_rate  inv_mpu_dmp_motion_driver.o
-    0x08002140   0x08002140   0x000000cc   Code   RO          242    .text.dmp_set_gyro_bias  inv_mpu_dmp_motion_driver.o
-    0x0800220c   0x0800220c   0x000000d8   Code   RO          240    .text.dmp_set_orientation  inv_mpu_dmp_motion_driver.o
-    0x080022e4   0x080022e4   0x00000032   Code   RO          260    .text.dmp_set_shake_reject_thresh  inv_mpu_dmp_motion_driver.o
-    0x08002316   0x08002316   0x00000024   Code   RO          262    .text.dmp_set_shake_reject_time  inv_mpu_dmp_motion_driver.o
-    0x0800233a   0x0800233a   0x00000024   Code   RO          264    .text.dmp_set_shake_reject_timeout  inv_mpu_dmp_motion_driver.o
-    0x0800235e   0x0800235e   0x00000036   Code   RO          252    .text.dmp_set_tap_axes  inv_mpu_dmp_motion_driver.o
-    0x08002394   0x08002394   0x00000026   Code   RO          254    .text.dmp_set_tap_count  inv_mpu_dmp_motion_driver.o
-    0x080023ba   0x080023ba   0x00000002   PAD
-    0x080023bc   0x080023bc   0x00000120   Code   RO          250    .text.dmp_set_tap_thresh  inv_mpu_dmp_motion_driver.o
-    0x080024dc   0x080024dc   0x00000024   Code   RO          256    .text.dmp_set_tap_time  inv_mpu_dmp_motion_driver.o
-    0x08002500   0x08002500   0x00000024   Code   RO          258    .text.dmp_set_tap_time_multi  inv_mpu_dmp_motion_driver.o
-    0x08002524   0x08002524   0x0000001c   Code   RO           51    .text.fputc         usart.o
-    0x08002540   0x08002540   0x00000328   Code   RO          196    .text.get_st_biases  inv_mpu.o
-    0x08002868   0x08002868   0x00000024   Code   RO          216    .text.inv_orientation_matrix_to_scalar  inv_mpu.o
-    0x0800288c   0x0800288c   0x0000003a   Code   RO          218    .text.inv_row_2_scale  inv_mpu.o
-    0x080028c6   0x080028c6   0x00000002   PAD
-    0x080028c8   0x080028c8   0x0000008c   Code   RO           11    .text.main          main.o
-    0x08002954   0x08002954   0x00000002   Code   RO          152    .text.mget_ms       inv_mpu.o
-    0x08002956   0x08002956   0x00000002   PAD
-    0x08002958   0x08002958   0x0000004c   Code   RO          140    .text.mpu_configure_fifo  inv_mpu.o
-    0x080029a4   0x080029a4   0x000001d0   Code   RO          222    .text.mpu_dmp_get_data  inv_mpu.o
-    0x08002b74   0x08002b74   0x00000090   Code   RO          220    .text.mpu_dmp_init  inv_mpu.o
-    0x08002c04   0x08002c04   0x0000002c   Code   RO          164    .text.mpu_get_accel_fsr  inv_mpu.o
-    0x08002c30   0x08002c30   0x00000050   Code   RO          176    .text.mpu_get_accel_sens  inv_mpu.o
-    0x08002c80   0x08002c80   0x0000002c   Code   RO          162    .text.mpu_get_gyro_fsr  inv_mpu.o
-    0x08002cac   0x08002cac   0x00000038   Code   RO          174    .text.mpu_get_gyro_sens  inv_mpu.o
-    0x08002ce4   0x08002ce4   0x00000038   Code   RO          166    .text.mpu_get_lpf   inv_mpu.o
-    0x08002d1c   0x08002d1c   0x00000124   Code   RO          130    .text.mpu_init      inv_mpu.o
-    0x08002e40   0x08002e40   0x000000ac   Code   RO          202    .text.mpu_load_firmware  inv_mpu.o
-    0x08002eec   0x08002eec   0x000000c8   Code   RO          146    .text.mpu_lp_accel_mode  inv_mpu.o
-    0x08002fb4   0x08002fb4   0x000000a0   Code   RO          188    .text.mpu_read_fifo_stream  inv_mpu.o
-    0x08003054   0x08003054   0x00000064   Code   RO          200    .text.mpu_read_mem  inv_mpu.o
-    0x080030b8   0x080030b8   0x0000016c   Code   RO          160    .text.mpu_reset_fifo  inv_mpu.o
-    0x08003224   0x08003224   0x000002e8   Code   RO          192    .text.mpu_run_self_test  inv_mpu.o
-    0x0800350c   0x0800350c   0x00000074   Code   RO          134    .text.mpu_set_accel_fsr  inv_mpu.o
-    0x08003580   0x08003580   0x000000dc   Code   RO          142    .text.mpu_set_bypass  inv_mpu.o
-    0x0800365c   0x0800365c   0x00000080   Code   RO          194    .text.mpu_set_dmp_state  inv_mpu.o
-    0x080036dc   0x080036dc   0x00000070   Code   RO          132    .text.mpu_set_gyro_fsr  inv_mpu.o
-    0x0800374c   0x0800374c   0x00000058   Code   RO          148    .text.mpu_set_int_latched  inv_mpu.o
-    0x080037a4   0x080037a4   0x00000060   Code   RO          136    .text.mpu_set_lpf   inv_mpu.o
-    0x08003804   0x08003804   0x00000080   Code   RO          138    .text.mpu_set_sample_rate  inv_mpu.o
-    0x08003884   0x08003884   0x0000009c   Code   RO          144    .text.mpu_set_sensors  inv_mpu.o
-    0x08003920   0x08003920   0x00000064   Code   RO          198    .text.mpu_write_mem  inv_mpu.o
-    0x08003984   0x08003984   0x0000008c   Code   RO          214    .text.run_self_test  inv_mpu.o
-    0x08003a10   0x08003a10   0x0000004c   Code   RO          180    .text.set_int_enable  inv_mpu.o
-    0x08003a5c   0x08003a5c   0x00000020   Code   RO         1116    i.__0printf         mc_w.l(printfa.o)
-    0x08003a7c   0x08003a7c   0x00000028   Code   RO         1200    i.__ARM_fpclassify  m_ws.l(fpclassify.o)
-    0x08003aa4   0x08003aa4   0x000000aa   Code   RO         1202    i.__kernel_poly     m_ws.l(poly.o)
-    0x08003b4e   0x08003b4e   0x00000006   Code   RO         1187    i.__mathlib_dbl_infnan  m_ws.l(dunder.o)
-    0x08003b54   0x08003b54   0x00000004   Code   RO         1188    i.__mathlib_dbl_infnan2  m_ws.l(dunder.o)
-    0x08003b58   0x08003b58   0x0000000c   Code   RO         1189    i.__mathlib_dbl_invalid  m_ws.l(dunder.o)
-    0x08003b64   0x08003b64   0x00000010   Code   RO         1192    i.__mathlib_dbl_underflow  m_ws.l(dunder.o)
-    0x08003b74   0x08003b74   0x0000000e   Code   RO         1262    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08003b82   0x08003b82   0x00000002   Code   RO         1263    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08003b84   0x08003b84   0x0000000e   Code   RO         1264    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08003b92   0x08003b92   0x00000002   PAD
-    0x08003b94   0x08003b94   0x0000000c   Code   RO         1238    i.__set_errno       mc_w.l(errno.o)
-    0x08003ba0   0x08003ba0   0x00000184   Code   RO         1123    i._fp_digits        mc_w.l(printfa.o)
-    0x08003d24   0x08003d24   0x000006dc   Code   RO         1124    i._printf_core      mc_w.l(printfa.o)
-    0x08004400   0x08004400   0x00000024   Code   RO         1125    i._printf_post_padding  mc_w.l(printfa.o)
-    0x08004424   0x08004424   0x0000002e   Code   RO         1126    i._printf_pre_padding  mc_w.l(printfa.o)
-    0x08004452   0x08004452   0x00000002   PAD
-    0x08004454   0x08004454   0x00000270   Code   RO          855    i.asin              m_ws.l(asin.o)
-    0x080046c4   0x080046c4   0x00000220   Code   RO         1177    i.atan              m_ws.l(atan.o)
-    0x080048e4   0x080048e4   0x0000019c   Code   RO          865    i.atan2             m_ws.l(atan2.o)
-    0x08004a80   0x08004a80   0x0000004c   Code   RO         1206    i.sqrt              m_ws.l(sqrt.o)
-    0x08004acc   0x08004acc   0x00000004   PAD
-    0x08004ad0   0x08004ad0   0x00000050   Data   RO          856    .constdata          m_ws.l(asin.o)
-    0x08004b20   0x08004b20   0x00000098   Data   RO         1178    .constdata          m_ws.l(atan.o)
-    0x08004bb8   0x08004bb8   0x00000008   Data   RO         1204    .constdata          m_ws.l(qnan.o)
-    0x08004bc0   0x08004bc0   0x00000003   Data   RO          294    .rodata..L__const.dmp_set_orientation.accel_axes  inv_mpu_dmp_motion_driver.o
-    0x08004bc3   0x08004bc3   0x00000003   Data   RO          293    .rodata..L__const.dmp_set_orientation.gyro_axes  inv_mpu_dmp_motion_driver.o
-    0x08004bc6   0x08004bc6   0x00000010   Data   RO          844    .rodata.AHBPrescTable  system_stm32f1xx.o
-    0x08004bd6   0x08004bd6   0x00000008   Data   RO          845    .rodata.APBPrescTable  system_stm32f1xx.o
-    0x08004bde   0x08004bde   0x00000bf6   Data   RO          292    .rodata.dmp_memory  inv_mpu_dmp_motion_driver.o
-    0x080057d4   0x080057d4   0x0000000c   Data   RO          225    .rodata.hw          inv_mpu.o
-    0x080057e0   0x080057e0   0x0000001b   Data   RO          224    .rodata.reg         inv_mpu.o
-    0x080057fb   0x080057fb   0x00000001   PAD
-    0x080057fc   0x080057fc   0x00000028   Data   RO          226    .rodata.test        inv_mpu.o
-    0x08005824   0x08005824   0x00000020   Data   RO         1261    Region$$Table       anon$$obj.o
+    0x0800201c   0x0800201c   0x00000068   Code   RO          246    .text.dmp_set_fifo_rate  inv_mpu_dmp_motion_driver.o
+    0x08002084   0x08002084   0x000000d8   Code   RO          240    .text.dmp_set_orientation  inv_mpu_dmp_motion_driver.o
+    0x0800215c   0x0800215c   0x00000032   Code   RO          260    .text.dmp_set_shake_reject_thresh  inv_mpu_dmp_motion_driver.o
+    0x0800218e   0x0800218e   0x00000024   Code   RO          262    .text.dmp_set_shake_reject_time  inv_mpu_dmp_motion_driver.o
+    0x080021b2   0x080021b2   0x00000024   Code   RO          264    .text.dmp_set_shake_reject_timeout  inv_mpu_dmp_motion_driver.o
+    0x080021d6   0x080021d6   0x00000036   Code   RO          252    .text.dmp_set_tap_axes  inv_mpu_dmp_motion_driver.o
+    0x0800220c   0x0800220c   0x00000026   Code   RO          254    .text.dmp_set_tap_count  inv_mpu_dmp_motion_driver.o
+    0x08002232   0x08002232   0x00000002   PAD
+    0x08002234   0x08002234   0x00000120   Code   RO          250    .text.dmp_set_tap_thresh  inv_mpu_dmp_motion_driver.o
+    0x08002354   0x08002354   0x00000024   Code   RO          256    .text.dmp_set_tap_time  inv_mpu_dmp_motion_driver.o
+    0x08002378   0x08002378   0x00000024   Code   RO          258    .text.dmp_set_tap_time_multi  inv_mpu_dmp_motion_driver.o
+    0x0800239c   0x0800239c   0x0000001c   Code   RO           51    .text.fputc         usart.o
+    0x080023b8   0x080023b8   0x00000328   Code   RO          196    .text.get_st_biases  inv_mpu.o
+    0x080026e0   0x080026e0   0x00000024   Code   RO          216    .text.inv_orientation_matrix_to_scalar  inv_mpu.o
+    0x08002704   0x08002704   0x0000003a   Code   RO          218    .text.inv_row_2_scale  inv_mpu.o
+    0x0800273e   0x0800273e   0x00000002   PAD
+    0x08002740   0x08002740   0x0000008c   Code   RO           11    .text.main          main.o
+    0x080027cc   0x080027cc   0x00000002   Code   RO          152    .text.mget_ms       inv_mpu.o
+    0x080027ce   0x080027ce   0x00000002   PAD
+    0x080027d0   0x080027d0   0x0000004c   Code   RO          140    .text.mpu_configure_fifo  inv_mpu.o
+    0x0800281c   0x0800281c   0x000001d0   Code   RO          222    .text.mpu_dmp_get_data  inv_mpu.o
+    0x080029ec   0x080029ec   0x00000090   Code   RO          220    .text.mpu_dmp_init  inv_mpu.o
+    0x08002a7c   0x08002a7c   0x0000002c   Code   RO          164    .text.mpu_get_accel_fsr  inv_mpu.o
+    0x08002aa8   0x08002aa8   0x00000050   Code   RO          176    .text.mpu_get_accel_sens  inv_mpu.o
+    0x08002af8   0x08002af8   0x0000002c   Code   RO          162    .text.mpu_get_gyro_fsr  inv_mpu.o
+    0x08002b24   0x08002b24   0x00000038   Code   RO          174    .text.mpu_get_gyro_sens  inv_mpu.o
+    0x08002b5c   0x08002b5c   0x00000038   Code   RO          166    .text.mpu_get_lpf   inv_mpu.o
+    0x08002b94   0x08002b94   0x00000124   Code   RO          130    .text.mpu_init      inv_mpu.o
+    0x08002cb8   0x08002cb8   0x000000ac   Code   RO          202    .text.mpu_load_firmware  inv_mpu.o
+    0x08002d64   0x08002d64   0x000000c8   Code   RO          146    .text.mpu_lp_accel_mode  inv_mpu.o
+    0x08002e2c   0x08002e2c   0x000000a0   Code   RO          188    .text.mpu_read_fifo_stream  inv_mpu.o
+    0x08002ecc   0x08002ecc   0x00000064   Code   RO          200    .text.mpu_read_mem  inv_mpu.o
+    0x08002f30   0x08002f30   0x0000016c   Code   RO          160    .text.mpu_reset_fifo  inv_mpu.o
+    0x0800309c   0x0800309c   0x000002e8   Code   RO          192    .text.mpu_run_self_test  inv_mpu.o
+    0x08003384   0x08003384   0x00000074   Code   RO          134    .text.mpu_set_accel_fsr  inv_mpu.o
+    0x080033f8   0x080033f8   0x000000dc   Code   RO          142    .text.mpu_set_bypass  inv_mpu.o
+    0x080034d4   0x080034d4   0x00000080   Code   RO          194    .text.mpu_set_dmp_state  inv_mpu.o
+    0x08003554   0x08003554   0x00000070   Code   RO          132    .text.mpu_set_gyro_fsr  inv_mpu.o
+    0x080035c4   0x080035c4   0x00000058   Code   RO          148    .text.mpu_set_int_latched  inv_mpu.o
+    0x0800361c   0x0800361c   0x00000060   Code   RO          136    .text.mpu_set_lpf   inv_mpu.o
+    0x0800367c   0x0800367c   0x00000080   Code   RO          138    .text.mpu_set_sample_rate  inv_mpu.o
+    0x080036fc   0x080036fc   0x0000009c   Code   RO          144    .text.mpu_set_sensors  inv_mpu.o
+    0x08003798   0x08003798   0x00000060   Code   RO          198    .text.mpu_write_mem  inv_mpu.o
+    0x080037f8   0x080037f8   0x00000080   Code   RO          214    .text.run_self_test  inv_mpu.o
+    0x08003878   0x08003878   0x0000004c   Code   RO          180    .text.set_int_enable  inv_mpu.o
+    0x080038c4   0x080038c4   0x00000020   Code   RO         1116    i.__0printf         mc_w.l(printfa.o)
+    0x080038e4   0x080038e4   0x00000028   Code   RO         1200    i.__ARM_fpclassify  m_ws.l(fpclassify.o)
+    0x0800390c   0x0800390c   0x000000aa   Code   RO         1202    i.__kernel_poly     m_ws.l(poly.o)
+    0x080039b6   0x080039b6   0x00000006   Code   RO         1187    i.__mathlib_dbl_infnan  m_ws.l(dunder.o)
+    0x080039bc   0x080039bc   0x00000004   Code   RO         1188    i.__mathlib_dbl_infnan2  m_ws.l(dunder.o)
+    0x080039c0   0x080039c0   0x0000000c   Code   RO         1189    i.__mathlib_dbl_invalid  m_ws.l(dunder.o)
+    0x080039cc   0x080039cc   0x00000010   Code   RO         1192    i.__mathlib_dbl_underflow  m_ws.l(dunder.o)
+    0x080039dc   0x080039dc   0x0000000e   Code   RO         1262    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x080039ea   0x080039ea   0x00000002   Code   RO         1263    i.__scatterload_null  mc_w.l(handlers.o)
+    0x080039ec   0x080039ec   0x0000000e   Code   RO         1264    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x080039fa   0x080039fa   0x00000002   PAD
+    0x080039fc   0x080039fc   0x0000000c   Code   RO         1238    i.__set_errno       mc_w.l(errno.o)
+    0x08003a08   0x08003a08   0x00000184   Code   RO         1123    i._fp_digits        mc_w.l(printfa.o)
+    0x08003b8c   0x08003b8c   0x000006dc   Code   RO         1124    i._printf_core      mc_w.l(printfa.o)
+    0x08004268   0x08004268   0x00000024   Code   RO         1125    i._printf_post_padding  mc_w.l(printfa.o)
+    0x0800428c   0x0800428c   0x0000002e   Code   RO         1126    i._printf_pre_padding  mc_w.l(printfa.o)
+    0x080042ba   0x080042ba   0x00000002   PAD
+    0x080042bc   0x080042bc   0x00000270   Code   RO          855    i.asin              m_ws.l(asin.o)
+    0x0800452c   0x0800452c   0x00000220   Code   RO         1177    i.atan              m_ws.l(atan.o)
+    0x0800474c   0x0800474c   0x0000019c   Code   RO          865    i.atan2             m_ws.l(atan2.o)
+    0x080048e8   0x080048e8   0x0000004c   Code   RO         1206    i.sqrt              m_ws.l(sqrt.o)
+    0x08004934   0x08004934   0x00000004   PAD
+    0x08004938   0x08004938   0x00000050   Data   RO          856    .constdata          m_ws.l(asin.o)
+    0x08004988   0x08004988   0x00000098   Data   RO         1178    .constdata          m_ws.l(atan.o)
+    0x08004a20   0x08004a20   0x00000008   Data   RO         1204    .constdata          m_ws.l(qnan.o)
+    0x08004a28   0x08004a28   0x00000003   Data   RO          294    .rodata..L__const.dmp_set_orientation.accel_axes  inv_mpu_dmp_motion_driver.o
+    0x08004a2b   0x08004a2b   0x00000003   Data   RO          293    .rodata..L__const.dmp_set_orientation.gyro_axes  inv_mpu_dmp_motion_driver.o
+    0x08004a2e   0x08004a2e   0x00000010   Data   RO          844    .rodata.AHBPrescTable  system_stm32f1xx.o
+    0x08004a3e   0x08004a3e   0x00000008   Data   RO          845    .rodata.APBPrescTable  system_stm32f1xx.o
+    0x08004a46   0x08004a46   0x00000bf6   Data   RO          292    .rodata.dmp_memory  inv_mpu_dmp_motion_driver.o
+    0x0800563c   0x0800563c   0x0000000c   Data   RO          225    .rodata.hw          inv_mpu.o
+    0x08005648   0x08005648   0x0000001b   Data   RO          224    .rodata.reg         inv_mpu.o
+    0x08005663   0x08005663   0x00000001   PAD
+    0x08005664   0x08005664   0x00000028   Data   RO          226    .rodata.test        inv_mpu.o
+    0x0800568c   0x0800568c   0x00000020   Data   RO         1261    Region$$Table       anon$$obj.o
 
 
-    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x08005848, Size: 0x000004c0, Max: 0x00002800, ABSOLUTE)
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x080056b0, Size: 0x000004c0, Max: 0x00002800, ABSOLUTE)
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x20000000   0x08005848   0x00000004   Data   RW         1227    .data               mc_w.l(stdout.o)
-    0x20000004   0x0800584c   0x00000004   Data   RW         1239    .data               mc_w.l(errno.o)
-    0x20000008   0x08005850   0x00000008   Data   RW          539    .data..L_MergedGlobals  stm32f1xx_hal.o
-    0x20000010   0x08005858   0x00000004   Data   RW          843    .data.SystemCoreClock  system_stm32f1xx.o
-    0x20000014   0x0800585c   0x00000009   Data   RW          228    .data.gyro_orientation  inv_mpu.o
-    0x2000001d   0x08005865   0x00000003   PAD
-    0x20000020   0x08005868   0x0000002c   Data   RW          227    .data.st            inv_mpu.o
-    0x2000004c   0x08005894   0x00000004   PAD
+    0x20000000   0x080056b0   0x00000004   Data   RW         1227    .data               mc_w.l(stdout.o)
+    0x20000004   0x080056b4   0x00000004   Data   RW         1239    .data               mc_w.l(errno.o)
+    0x20000008   0x080056b8   0x00000008   Data   RW          539    .data..L_MergedGlobals  stm32f1xx_hal.o
+    0x20000010   0x080056c0   0x00000004   Data   RW          843    .data.SystemCoreClock  system_stm32f1xx.o
+    0x20000014   0x080056c4   0x00000009   Data   RW          228    .data.gyro_orientation  inv_mpu.o
+    0x2000001d   0x080056cd   0x00000003   PAD
+    0x20000020   0x080056d0   0x0000002c   Data   RW          227    .data.st            inv_mpu.o
+    0x2000004c   0x080056fc   0x00000004   PAD
     0x20000050        -       0x0000000c   Zero   RW           24    .bss..L_MergedGlobals  main.o
     0x2000005c        -       0x00000010   Zero   RW          299    .bss..L_MergedGlobals  inv_mpu_dmp_motion_driver.o
     0x2000006c        -       0x00000002   Zero   RW          297    .bss.dmp.2          inv_mpu_dmp_motion_driver.o
-    0x2000006e   0x08005894   0x00000002   PAD
+    0x2000006e   0x080056fc   0x00000002   PAD
     0x20000070        -       0x00000002   Zero   RW          298    .bss.dmp.4          inv_mpu_dmp_motion_driver.o
-    0x20000072   0x08005894   0x00000002   PAD
+    0x20000072   0x080056fc   0x00000002   PAD
     0x20000074        -       0x00000048   Zero   RW           53    .bss.huart1         usart.o
     0x200000bc        -       0x00000004   Zero   RW          538    .bss.uwTick         stm32f1xx_hal.o
     0x200000c0        -       0x00000400   Zero   RW            1    STACK               startup_stm32f103x6.o
@@ -2693,8 +2685,8 @@ Image component sizes
 
        220         16          0          0          0       1599   gpio.o
        488         12          0          0          0       2860   iic.o
-      5260        142         79         53          0      21853   inv_mpu.o
-      2410        112       3068          0         20       9050   inv_mpu_dmp_motion_driver.o
+      5244        138         79         53          0      21847   inv_mpu.o
+      2018        108       3068          0         20       9050   inv_mpu_dmp_motion_driver.o
        250         24          0          0         12       2328   main.o
        534         12          0          0          0       3440   mpu6050.o
         36          8        236          0       1024        764   startup_stm32f103x6.o
@@ -2709,7 +2701,7 @@ Image component sizes
        196         12          0          0         72       4643   usart.o
 
     ----------------------------------------------------------------------
-     12118        498       3440         68       1140      97203   Object Totals
+     11710        490       3440         68       1140      97197   Object Totals
          0          0         32          0          0          0   (incl. Generated)
         18          0          1          3          8          0   (incl. Padding)
 
@@ -2792,15 +2784,15 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     18916        776       3680         76       1140      99043   Grand Totals
-     18916        776       3680         76       1140      99043   ELF Image Totals
-     18916        776       3680         76          0          0   ROM Totals
+     18508        768       3680         76       1140      99037   Grand Totals
+     18508        768       3680         76       1140      99037   ELF Image Totals
+     18508        768       3680         76          0          0   ROM Totals
 
 ==============================================================================
 
-    Total RO  Size (Code + RO Data)                22596 (  22.07kB)
+    Total RO  Size (Code + RO Data)                22188 (  21.67kB)
     Total RW  Size (RW Data + ZI Data)              1216 (   1.19kB)
-    Total ROM Size (Code + RO Data + RW Data)      22672 (  22.14kB)
+    Total ROM Size (Code + RO Data + RW Data)      22264 (  21.74kB)
 
 ==============================================================================
 

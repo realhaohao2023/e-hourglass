@@ -2880,12 +2880,12 @@ uint8_t run_self_test(void)
         gyro[0] = (long)(gyro[0] * sens);
         gyro[1] = (long)(gyro[1] * sens);
         gyro[2] = (long)(gyro[2] * sens);
-        dmp_set_gyro_bias(gyro);
+        //dmp_set_gyro_bias(gyro);
         mpu_get_accel_sens(&accel_sens);
         accel[0] *= accel_sens;
         accel[1] *= accel_sens;
         accel[2] *= accel_sens;
-        dmp_set_accel_bias(accel);
+        //dmp_set_accel_bias(accel);
         return 0;
     } else return 1;
 }

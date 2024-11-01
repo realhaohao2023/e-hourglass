@@ -106,7 +106,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    
+    //欧拉角 前pitch正增 后pitch负增 左roll正增 右roll负增
     //MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);
 	  //MPU_Get_Accelerometer(&aacx,&aacy,&aacz);
     mpu_dmp_get_data(&pitch,&roll,&yaw);
