@@ -7,6 +7,8 @@
 "e-hourglass\inv_mpu.o"
 "e-hourglass\inv_mpu_dmp_motion_driver.o"
 "e-hourglass\mpu6050.o"
+"e-hourglass\8x8led.o"
+"e-hourglass\animation.o"
 "e-hourglass\stm32f1xx_hal_gpio_ex.o"
 "e-hourglass\stm32f1xx_hal_tim.o"
 "e-hourglass\stm32f1xx_hal_tim_ex.o"
@@ -22,7 +24,7 @@
 "e-hourglass\stm32f1xx_hal_flash_ex.o"
 "e-hourglass\stm32f1xx_hal_exti.o"
 "e-hourglass\system_stm32f1xx.o"
---library_type=microlib --strict --scatter "e-hourglass\e-hourglass.sct"
+--strict --scatter "e-hourglass\e-hourglass.sct"
 --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
 --list "e-hourglass.map" -o e-hourglass\e-hourglass.axf

@@ -48,7 +48,6 @@
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-//���������ݱ���
 float pitch,roll,yaw;
 short gyrox,gyroy,gyroz;
 short	aacx,aacy,aacz;
@@ -108,7 +107,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    
+    //欧拉角 前pitch正增 后pitch负增 左roll正增 右roll负增
     //MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);
 	  //MPU_Get_Accelerometer(&aacx,&aacy,&aacz);
     mpu_dmp_get_data(&pitch,&roll,&yaw);
@@ -119,7 +118,7 @@ int main(void)
     
     HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
     HAL_Delay(100);
-    printf("%.2f,%.2f,%.2f\n",pitch,roll,yaw);
+    //printf("%.2f,%.2f,%.2f\n",pitch,roll,yaw);
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -255,11 +254,7 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
-int fputc(int ch, FILE *f)
-{
-    HAL_UART_Transmit(&huart1, (uint8_t *)&ch, 1, 1000); 
-    return ch;
-}
+
 /* USER CODE END 4 */
 
 /**
