@@ -20,6 +20,12 @@
 
 #ifndef _INV_MPU_H_
 #define _INV_MPU_H_
+
+#ifdef __cplusplus
+extern "C"
+{
+#endif
+
 #include "stm32f1xx_hal.h"
 
 //定义输出速度
@@ -134,6 +140,10 @@ unsigned short inv_orientation_matrix_to_scalar(const signed char *mtx);
 uint8_t run_self_test(void);
 uint8_t mpu_dmp_init(void);
 uint8_t mpu_dmp_get_data(float *pitch,float *roll,float *yaw);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif  /* #ifndef _INV_MPU_H_ */
 

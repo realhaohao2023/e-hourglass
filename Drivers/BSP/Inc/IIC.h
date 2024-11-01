@@ -1,10 +1,17 @@
 #ifndef _IIC_H
 #define _IIC_H
 
-#include <inttypes.h>
+#ifdef __cplusplus
+extern "C"
+{
+#endif
 
-#define IIC_WR	0		/* Ð´¿ØÖÆbit */
-#define IIC_RD	1		/* ¶Á¿ØÖÆbit */
+
+#include <inttypes.h>
+#include <main.h>
+
+#define IIC_WR	0		/* Ð´ï¿½ï¿½ï¿½ï¿½bit */
+#define IIC_RD	1		/* ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½bit */
 
 void IIC_Start(void);
 void IIC_Stop(void);
@@ -15,5 +22,11 @@ void IIC_Ack(void);
 void IIC_NAck(void);
 uint8_t IIC_CheckDevice(uint8_t _Address);
 void IIC_GPIO_Init(void);
+
+#ifdef __cplusplus
+}
+#endif
+
+
 
 #endif

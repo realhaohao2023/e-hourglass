@@ -1,5 +1,10 @@
 #ifndef __MPU6050_H
 #define __MPU6050_H
+
+#ifdef __cplusplus
+extern "C" {
+#endif
+
 #include "IIC.h"
 
 
@@ -105,5 +110,9 @@ uint8_t MPU_Set_Fifo(uint8_t sens);
 short MPU_Get_Temperature(void);
 uint8_t MPU_Get_Gyroscope(short *gx,short *gy,short *gz);
 uint8_t MPU_Get_Accelerometer(short *ax,short *ay,short *az);
+
+#ifdef __cplusplus
+}
+#endif
 
 #endif

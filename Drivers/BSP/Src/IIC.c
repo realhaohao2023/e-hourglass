@@ -1,6 +1,5 @@
 #include "stm32f1xx_hal.h"
 #include "IIC.h"
-#include "gpio.h"
 
 /* 定义IIC总线连接的GPIO端口, 用户只需要修改下面4行代码即可任意改变SCL和SDA的引脚 */
 #define GPIO_PORT_IIC     GPIOB                       /* GPIO端口 */

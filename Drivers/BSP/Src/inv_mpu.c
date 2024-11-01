@@ -2880,12 +2880,12 @@ uint8_t run_self_test(void)
         gyro[0] = (long)(gyro[0] * sens);
         gyro[1] = (long)(gyro[1] * sens);
         gyro[2] = (long)(gyro[2] * sens);
-        //dmp_set_gyro_bias(gyro);
+        dmp_set_gyro_bias(gyro);
         mpu_get_accel_sens(&accel_sens);
         accel[0] *= accel_sens;
         accel[1] *= accel_sens;
         accel[2] *= accel_sens;
-        //dmp_set_accel_bias(accel);
+        dmp_set_accel_bias(accel);
         return 0;
     } else return 1;
 }
@@ -2961,8 +2961,8 @@ uint8_t mpu_dmp_init(void)
         if(res)return 6;
         res=dmp_set_fifo_rate(DEFAULT_MPU_HZ);	//设置DMP输出速率(最大不超过200Hz)
         if(res)return 7;
-        res=run_self_test();		//自检
-        //if(res)return 8;
+        // res=run_self_test();		//自检  注释掉，取消上电自检，让俯仰角和翻滚角以水平面为基准
+        // if(res)return 8;
         res=mpu_set_dmp_state(1);	//使能DMP
         if(res)return 9;
     } else return 10;
