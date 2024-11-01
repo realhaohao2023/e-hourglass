@@ -98,7 +98,7 @@ int main(void)
   MX_USART1_UART_Init();
   /* USER CODE BEGIN 2 */
   MPU_Init();
-	//mpu_dmp_init();
+	mpu_dmp_init();
 
   /* USER CODE END 2 */
 
@@ -107,16 +107,17 @@ int main(void)
   while (1)
   {
     
-    MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);
-	  MPU_Get_Accelerometer(&aacx,&aacy,&aacz);
+    //MPU_Get_Gyroscope(&gyrox,&gyroy,&gyroz);
+	  //MPU_Get_Accelerometer(&aacx,&aacy,&aacz);
     mpu_dmp_get_data(&pitch,&roll,&yaw);
     
-    //printf("%hd,%hd,%hd\n",gyrox,gyroy,gyroz);
+    //printf("%3hd,%3hd,%3hd\n",gyrox,gyroy,gyroz);
     //printf("hello,world\n");
     
-    printf("%f,%f,%f\n",pitch,roll,yaw);
+    
     HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
-    HAL_Delay(500);
+    HAL_Delay(100);
+    printf("%.2f,%.2f,%.2f\n",pitch,roll,yaw);
     
     /* USER CODE END WHILE */
 
