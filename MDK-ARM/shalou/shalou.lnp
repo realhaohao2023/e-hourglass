@@ -1,0 +1,26 @@
+--cpu Cortex-M3
+"shalou\startup_stm32f103x6.o"
+"shalou\main.o"
+"shalou\gpio.o"
+"shalou\usart.o"
+"shalou\stm32f1xx_it.o"
+"shalou\stm32f1xx_hal_msp.o"
+"shalou\stm32f1xx_hal_gpio_ex.o"
+"shalou\stm32f1xx_hal_tim.o"
+"shalou\stm32f1xx_hal_tim_ex.o"
+"shalou\stm32f1xx_hal_uart.o"
+"shalou\stm32f1xx_hal.o"
+"shalou\stm32f1xx_hal_rcc.o"
+"shalou\stm32f1xx_hal_rcc_ex.o"
+"shalou\stm32f1xx_hal_gpio.o"
+"shalou\stm32f1xx_hal_dma.o"
+"shalou\stm32f1xx_hal_cortex.o"
+"shalou\stm32f1xx_hal_pwr.o"
+"shalou\stm32f1xx_hal_flash.o"
+"shalou\stm32f1xx_hal_flash_ex.o"
+"shalou\stm32f1xx_hal_exti.o"
+"shalou\system_stm32f1xx.o"
+--strict --scatter "shalou\shalou.sct"
+--summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list "shalou.map" -o shalou\shalou.axf
