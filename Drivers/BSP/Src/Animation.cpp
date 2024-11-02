@@ -87,40 +87,8 @@ Sand::Sand(int startX, int startY, LEDMatrix* ledMatrix) : x(startX), y(startY),
     matrix->setLED(startX, startY);
 }
 
-// 各个移动函数的实现
-void Sand::moveUp() {
-    if (x > 0) {
-        matrix->clearLED(x, y);
-        x--;
-        matrix->setLED(x, y);
-    }
-}
-
-void Sand::moveDown() {
-    if (x < 15) {
-        matrix->clearLED(x, y);
-        x++;
-        matrix->setLED(x, y);
-    }
-}
-
-void Sand::moveLeft() {
-    if (y > 0) {
-        matrix->clearLED(x, y);
-        y--;
-        matrix->setLED(x, y);
-    }
-}
-
-void Sand::moveRight() {
-    if (y < 15) {
-        matrix->clearLED(x, y);
-        y++;
-        matrix->setLED(x, y);
-    }
-}
-
-void Sand::moveUpLeft() {
+// 各个移动函数的实现，调整为旋转45度后的方向
+void Sand::moveUp() { // 左上
     if (x > 0 && y > 0) {
         matrix->clearLED(x, y);
         x--;
@@ -129,16 +97,16 @@ void Sand::moveUpLeft() {
     }
 }
 
-void Sand::moveUpRight() {
-    if (x > 0 && y < 15) {
+void Sand::moveDown() { // 右下
+    if (x < 15 && y < 15) {
         matrix->clearLED(x, y);
-        x--;
+        x++;
         y++;
         matrix->setLED(x, y);
     }
 }
 
-void Sand::moveDownLeft() {
+void Sand::moveLeft() { // 左下
     if (x < 15 && y > 0) {
         matrix->clearLED(x, y);
         x++;
@@ -147,11 +115,43 @@ void Sand::moveDownLeft() {
     }
 }
 
-void Sand::moveDownRight() {
-    if (x < 15 && y < 15) {
+void Sand::moveRight() { // 右上
+    if (x > 0 && y < 15) {
+        matrix->clearLED(x, y);
+        x--;
+        y++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveUpRight() { // 上
+    if (x > 0) {
+        matrix->clearLED(x, y);
+        x--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveDownRight() { // 右
+    if (y < 15) {
+        matrix->clearLED(x, y);
+        y++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveUpLeft() { // 左
+    if (y > 0) {
+        matrix->clearLED(x, y);
+        y--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveDownLeft() { // 下
+    if (x < 15) {
         matrix->clearLED(x, y);
         x++;
-        y++;
         matrix->setLED(x, y);
     }
 }

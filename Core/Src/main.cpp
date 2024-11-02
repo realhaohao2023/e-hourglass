@@ -153,8 +153,19 @@ int main(void)
     if (count ==10)
     {
       //在这里更新动画
-      sands[0].moveDown();
-      sands[1].moveLeft();
+      // sands[0].moveDown();
+      // sands[1].moveLeft();
+      for(int i = 0; i < MAX_SAND_COUNT; i++)
+      {
+        //sands[i].moveUpRight();
+        //sands[i].moveUp();
+        //sands[i].moveLeft();
+        //sands[i].moveRight();
+        //sands[i].moveUpLeft();
+        //sands[i].moveDownRight();
+        sands[i].moveDownLeft();
+        sands[i].updatePosition();
+      }
       matrix.refresh();
       count = 0;
     }
