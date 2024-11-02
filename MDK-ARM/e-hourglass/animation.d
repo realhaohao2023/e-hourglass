@@ -1,5 +1,5 @@
 e-hourglass\animation.o: ..\Drivers\BSP\Src\Animation.cpp
-e-hourglass\animation.o: ../Drivers/BSP/Inc/Animation.h
+e-hourglass\animation.o: ../Drivers/BSP/Inc/Animation.hpp
 e-hourglass\animation.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdint.h
 e-hourglass\animation.o: ../Core/Inc/main.h
 e-hourglass\animation.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h

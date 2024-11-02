@@ -1,4 +1,4 @@
-e-hourglass\main.o: ../Core/Src/main.c
+e-hourglass\main.o: ..\Core\Src\main.cpp
 e-hourglass\main.o: ../Core/Inc/main.h
 e-hourglass\main.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
 e-hourglass\main.o: ../Core/Inc/stm32f1xx_hal_conf.h
@@ -33,3 +33,5 @@ e-hourglass\main.o: ../Drivers/BSP/Inc/inv_mpu_dmp_motion_driver.h
 e-hourglass\main.o: ../Drivers/BSP/Inc/mpu6050.h
 e-hourglass\main.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdarg.h
 e-hourglass\main.o: D:\Keil_MDK\ARM\ARMCC\Bin\..\include\stdio.h
+e-hourglass\main.o: ../Drivers/BSP/Inc/8x8led.h
+e-hourglass\main.o: ../Drivers/BSP/Inc/Animation.hpp

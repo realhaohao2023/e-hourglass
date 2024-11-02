@@ -1,8 +1,8 @@
 --cpu Cortex-M3
 "e-hourglass\startup_stm32f103xb.o"
-"e-hourglass\main.o"
 "e-hourglass\stm32f1xx_it.o"
 "e-hourglass\stm32f1xx_hal_msp.o"
+"e-hourglass\main.o"
 "e-hourglass\iic.o"
 "e-hourglass\inv_mpu.o"
 "e-hourglass\inv_mpu_dmp_motion_driver.o"

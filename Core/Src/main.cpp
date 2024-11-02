@@ -27,6 +27,8 @@
 #include "mpu6050.h"
 #include <stdarg.h>
 #include "stdio.h"
+#include "8x8led.h"
+#include "Animation.hpp"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -99,6 +101,14 @@ int main(void)
   /* USER CODE BEGIN 2 */
   MPU_Init();
 	mpu_dmp_init();
+  
+  GC7219_INIT();
+
+  //使用LEDMatrix类构造函数初始化一个对象
+  LEDMatrix matrix;
+  
+
+
 
 
   /* USER CODE END 2 */
@@ -116,9 +126,23 @@ int main(void)
     //printf("hello,world\n");
     
     
-    HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
+    //HAL_GPIO_TogglePin(GPIOC,GPIO_PIN_13);
     HAL_Delay(100);
+    matrix.setLED(3, 5);
+    matrix.setLED(7, 12);
+    matrix.setLED(0, 0);
+    matrix.setLED(1, 15);
+    matrix.refresh();
     //printf("%.2f,%.2f,%.2f\n",pitch,roll,yaw);
+    //如果pitch roll 大于20或小于-20，只要满足一个，就会点亮PC13,否则熄灭
+    if(pitch>20||pitch<-20||roll>20||roll<-20)
+    {
+      HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_RESET);
+    }
+    else
+    {
+      HAL_GPIO_WritePin(GPIOC,GPIO_PIN_13,GPIO_PIN_SET);
+    }
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
