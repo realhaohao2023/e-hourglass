@@ -38,7 +38,7 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-#define MAX_SAND_COUNT 10
+#define MAX_SAND_COUNT 7
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -113,16 +113,21 @@ int main(void)
 
 
   Sand sands[MAX_SAND_COUNT] = {
-      Sand(0, 0, &matrix),
-      Sand(0, 15, &matrix),
-      Sand(6, 0, &matrix),
+      // Sand(0, 0, &matrix),
+      // Sand(1, 0, &matrix),
+      // Sand(2, 0, &matrix),
+      // Sand(3, 0, &matrix),
+      // Sand(0, 1, &matrix),
+      // Sand(0, 2, &matrix),
+      // Sand(0, 3, &matrix),
+      Sand(7, 15, &matrix),
+      Sand(6, 15, &matrix),
       Sand(5, 15, &matrix),
-      Sand(7, 7, &matrix),
-      Sand(4, 8, &matrix),
-      Sand(7, 9, &matrix),
-      Sand(5, 10, &matrix),
-      Sand(6, 11, &matrix),
-      Sand(5, 12, &matrix)};
+      Sand(7, 14, &matrix),
+      Sand(7, 13, &matrix),
+      Sand(7, 12, &matrix),
+      Sand(4, 15, &matrix),
+    };
 
  
 
@@ -161,9 +166,10 @@ int main(void)
         //sands[i].moveUp();
         //sands[i].moveLeft();
         //sands[i].moveRight();
-        //sands[i].moveUpLeft();
+        sands[i].moveUpLeft();
         //sands[i].moveDownRight();
-        sands[i].moveDownLeft();
+        //sands[i].moveDownLeft();
+        //sands[i].moveDown();
         sands[i].updatePosition();
       }
       matrix.refresh();
