@@ -34,7 +34,26 @@ private:
     uint8_t rows2[8];  // 存储每一行的 LED 状态
 };
 
+class Sand {
+private:
+    int x;
+    int y;
+    LEDMatrix* matrix;
 
+public:
+    Sand(int startX, int startY, LEDMatrix* ledMatrix);
+    void moveUp();
+    void moveDown();
+    void moveLeft();
+    void moveRight();
+    void moveUpLeft();
+    void moveUpRight();
+    void moveDownLeft();
+    void moveDownRight();
+    void updatePosition();
+    int getX() const;
+    int getY() const;
+};
 
 
 #ifdef __cplusplus

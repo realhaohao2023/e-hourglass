@@ -81,3 +81,89 @@ bool LEDMatrix::isLEDOn(int row0, int col)
     }
     return false;
 }
+
+// 构造函数
+Sand::Sand(int startX, int startY, LEDMatrix* ledMatrix) : x(startX), y(startY), matrix(ledMatrix) {
+    matrix->setLED(startX, startY);
+}
+
+// 各个移动函数的实现
+void Sand::moveUp() {
+    if (x > 0) {
+        matrix->clearLED(x, y);
+        x--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveDown() {
+    if (x < 15) {
+        matrix->clearLED(x, y);
+        x++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveLeft() {
+    if (y > 0) {
+        matrix->clearLED(x, y);
+        y--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveRight() {
+    if (y < 15) {
+        matrix->clearLED(x, y);
+        y++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveUpLeft() {
+    if (x > 0 && y > 0) {
+        matrix->clearLED(x, y);
+        x--;
+        y--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveUpRight() {
+    if (x > 0 && y < 15) {
+        matrix->clearLED(x, y);
+        x--;
+        y++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveDownLeft() {
+    if (x < 15 && y > 0) {
+        matrix->clearLED(x, y);
+        x++;
+        y--;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::moveDownRight() {
+    if (x < 15 && y < 15) {
+        matrix->clearLED(x, y);
+        x++;
+        y++;
+        matrix->setLED(x, y);
+    }
+}
+
+void Sand::updatePosition() {
+    matrix->setLED(x, y);
+}
+
+int Sand::getX() const {
+    return x;
+}
+
+int Sand::getY() const {
+    return y;
+}
